@@ -45,10 +45,12 @@
   <h2>4. 权限说明</h2>
   <p>本扩展申请以下权限，均用于实现核心功能：</p>
   <ul>
-    <li><strong>activeTab / tabs</strong>：获取当前标签页信息，用于截图和页面信息抓取。</li>
-    <li><strong>tabCapture</strong>：捕获标签页音视频流，用于录屏功能。</li>
-    <li><strong>debugger</strong>：获取页面原始内容（包括跨域 iframe），用于完整页面信息抓取。</li>
-    <li><strong>storage</strong>：存储扩展连接状态等必要配置信息。</li>
+    <li><strong>tabs</strong>：获取当前标签页的 URL 与标题，用于定位截图 / 录屏 / 页面信息抓取的目标页面。</li>
+    <li><strong>scripting</strong>：向目标页面注入脚本，用于抓取页面 DOM 文本、图片等运营素材信息。</li>
+    <li><strong>debugger</strong>：attach 到目标标签页并通过 CDP 协议获取页面原始内容（含跨域 iframe），用于完整页面信息抓取与录屏截帧。</li>
+    <li><strong>offscreen</strong>：创建离屏文档，将录屏截获的帧序列合成为 WebM 视频。</li>
+    <li><strong>storage</strong>：存储扩展与后端的连接状态等必要配置信息。</li>
+    <li><strong>alarms</strong>：用于维持与 ops-pilot 后端的长连接心跳，确保任务正常执行。</li>
     <li><strong>host 权限（&lt;all_urls&gt;）</strong>：允许在所有网站上执行截图和页面信息抓取，这是本扩展核心功能的必要权限。</li>
   </ul>
 
